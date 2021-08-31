@@ -13,7 +13,11 @@ checkButton.addEventListener("click", function submitHandler(){
 })
 
 function profitOrLoss(initial,size,current){
-    if(initial>current){
+    if (intialPrice <=0 || quantity <=0 ){
+        userMessage("You have entered a negative value!")
+
+    }
+     else if(initial>current){
         var loss = (initial-current) * size;
         var lossPercentage = (loss/initial) * 100;
         userMessage(` You made a loss of ₹ ${loss} and the percent is ${lossPercentage}%` , "red")
