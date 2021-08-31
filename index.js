@@ -15,7 +15,7 @@ checkButton.addEventListener("click", function submitHandler(){
 
 function profitOrLoss(initial,size,current){
     if(initial<= 0 || size<= 0 || current<0){
-        userMessage("You have entered an negative value!", "black")
+        userMessage("You have entered a negative value!", "black")
 
     }
       else if(initial>current){
