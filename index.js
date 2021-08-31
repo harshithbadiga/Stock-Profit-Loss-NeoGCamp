@@ -14,13 +14,17 @@ checkButton.addEventListener("click", function submitHandler(){
 })
 
 function profitOrLoss(initial,size,current){
-      if(initial>current){
-        var loss = (initial-current) * size;
-        var lossPercentage = (loss/initial) * 100;
+    if(initial<= 0 || size<= 0 || current<0){
+        userMessage("You have entered an negative value!", "black")
+
+    }
+      else if(initial>current){
+        var loss = Math.abs(((initial-current) * size)).toFixed(2);
+        var lossPercentage = Math.abs(((loss/initial) * 100)).toFixed(2);
         userMessage(` You made a loss of ₹ ${loss} and the percent is ${lossPercentage}%` , "red")
     } else if (current>initial){
-        var profit = (current-initial) * size;
-        var profitPercentage = (profit/initial) * 100;
+        var profit = Math.abs(((current-initial) * size)).toFixed(2);
+        var profitPercentage = Math.abs(((profit/initial) * 100)).toFixed(2);
         userMessage(`You made a profit of ₹ ${profit} and the percent is ${profitPercentage}%`, "green")
     } else if (current === initial){
         userMessage("You are neutral", "white")
